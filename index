@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/47fbb2a778.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="#interest">興味</a></li>
+                    <li><a href="#future">将来 </a></li>
+                    <li><a href="#contact">連絡先</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <p>学生</p>    
+                <h1>こんにちは、私は<span>ナビングルン</span><br>と申しますつくばで学生やってます。</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- 好きなもの -->
+    <div id="interest">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/basket.jpg" alt="Basketball image">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">好きなもの</h1>
+                    <p>子供の頃、バスケットボールが大好きでした。試合を観るのはいつもワクワクしました。先輩たちがプレーするのを見て、新しい技術や動きを学ぶのが好きでした。<br>バスケットボールだけでなく、以下のこともやってます。</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('game')">ゲーム</p>
+                        <p class="tab-links" onclick="opentab('gym')">ジム</p>
+                        <p class="tab-links" onclick="opentab('trading')">トレーディング</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="game">
+                        <ul>
+                            <li><img src="images/pubg.jpg" alt="PUBG image"></li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="gym">
+                        <ul>
+                            <li><img src="images/gym.jpg" alt="GYM image"></li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="trading">
+                        <ul>
+                            <li><img src="images/trading.jpg" alt="TRADING image"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- やりたいこと -->
+    <div id="future">
+        <div class="container">
+            <h1 class="sub-title">興味持っているもの</h1>
+            <div class="service-list">
+                    <div>
+                        <i class="fa-solid fa-chart-simple"></i>
+                        <h2>Analyst</h2>
+                        <p>市場アナリストは、市場の動向や経済状況を分析し、企業が情報に基づいた投資判断を行えるよう支援します。</p>
+                        <a href="#"> Learn more</a>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-money-bill-trend-up"></i>
+                        <h2>Hedgefund Manager</h2>
+                        <p>ヘッジファンドマネージャーは、レバレッジや空売りなどの戦略を用いて投資家のために高いリターンを生み出す投資ファンドを運用し、市場知識とリスク耐性が求められます。</p>
+                        <a href="#"> Learn more</a>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-arrow-trend-up"></i>
+                        <h2>Risk Manager</h2>
+                        <p>リスクマネージャーは、財務および運営リスクを特定、評価、軽減し、組織が潜在的な損失から守られるようにします。</p>
+                        <a href="#"> Learn more</a>
+                    </div>
+            </div>
+        </div>  
+    </div>
+<!--連絡先-->
+<div id="contact">
+   <div class="container">
+       <div class="row">
+           <div class="contact-left">
+               <h1 class="sub-title">連絡先</h1>
+               <p><i class="fa-solid fa-envelope"></i>nabinjpn2030@gmail.com</p>
+               <p><i class="fa-solid fa-phone"></i>*** **** ****</p>
+               <div class="social-icons">
+                   <a href="https://facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+		   <a href="https://instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+		   <a href="https://twitter.com/"><i class="fa-brands fa-twitter"></i></a>
+		   <a href="https://www.line.me/"><i class="fa-brands fa-line"></i></a>
+               </div>
+	       <a href="images/h.avif"class="btn btn2">CVをダウンロード</a>
+           </div>
+           <div class="contact-right">
+               <form name="submit-to-google-sheet">
+                   <input type="text" name="Name" placeholder="名前" required>
+                   <input type="email" name="Email" placeholder="メールアドレス" required>
+                   <textarea name="Message" rows="6" placeholder="メッセージ"></textarea>
+                   <button type="submit" class="btn2">送信</button>
+               </form>
+		<span id="msg"></span>
+	   </div>
+       </div>
+   </div>
+   <div class="copy-right">
+   <p>Copyright @ Nabin. Made with <i class="fa-solid fa-heart"></i></p>
+</div>
+
+    <script>
+        var tablinks = document.querySelectorAll(".tab-links");
+        var tabcontents = document.querySelectorAll(".tab-contents");
+
+        function opentab(tabname) {
+            tablinks.forEach(function(link) {
+                link.classList.remove("active-link");
+            });
+            tabcontents.forEach(function(content) {
+                content.classList.remove("active-tab");
+            });
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbz95Aa9Spx9P1OH9HiOVZor_XVZu6CUxonQUPYq6x077HBQp0zP2-GyWmo2IwRb78k/exec';
+  const form = document.forms['submit-to-google-sheet'];
+  console.log(form);
+  const msg = document.getElementById("msg");
+  
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+      .then(response => {
+        msg.innerHTML = "Message sent successfully";
+        setTimeout(function(){
+          msg.innerHTML = "";
+        }, 5000);
+        form.reset();
+      })
+      .catch(error => console.error('Error!', error.message));
+  });
+</script>
+
+</body>
+</html>
+
+
